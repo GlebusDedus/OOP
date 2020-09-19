@@ -36,6 +36,12 @@ class Critter:
         if self.hunger < 0:
             self.hunger = 0
         self.__pass_time()
+    def play(self,fun=4):
+        print("yiiii!")
+        self.borerdom -= fun
+        if self.boredom <0:
+            self.boredom = 0
+        self.__pass_time()
 
     def __pass_time(self):
         self.hunger +=1
