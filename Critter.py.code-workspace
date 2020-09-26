@@ -1,8 +1,56 @@
-{
-	"folders": [
-		{
-			"path": "."
-		}
-	],
-	"settings": {}
-}
+print('введите номер канала')
+n=int(input())
+print('введите громкость канала')
+l=int(input())
+if n%10==0:
+    n=10
+if l> 100:
+    print('максимальная громкость 100 ,вы указали невозможное значение, текущая громкость 100')
+if l < 0:
+    print('минимальная громкость 0 ,вы указали невозможное значение, текущая громкость 0')
+if 100 > l > 0:
+    print('текущая громкость',l)
+while  n>10 or n<1:
+        print('максималный номеранала 10,вы указали невозможное значение канала,укажите номер канала вновь')
+        n=int(input())
+class telek:
+    def __init__(self,number,name):
+        self.number=number
+        self.name=name
+    def work(self):
+        print('вы смотрите канал под номером:', self.number)
+        print("его название",self.name,end='.')
+def da():
+    channel1 = telek(1,'NLO_TV')
+    channel2 = telek(2,'Wiasat_history')
+    channel3 = telek(3,'Amazon')
+    channel4 = telek(4,'Hard_Play')
+    channel5 = telek(5,'News')
+    channel6 = telek(6,'First_chanel')
+    channel7 = telek(7,'One+One')
+    channel8 = telek(8,'ISTV')
+    channel9 = telek(9,'TV1000')
+    channel10 = telek(10,'Among_us')
+
+    if n==1 or n%10==1:
+        channel1.work()
+    if n==2 or n%10==2:
+        channel2.work()
+    if n==3 or n%10==3:
+        channel3.work()
+    if n==4 or n%10==4:
+        channel4.work()
+    if n==5 or n%10==5:
+        channel5.work()
+    if n==6 or n%10==6:
+        channel6.work()
+    if n==7 or n%10==7:
+        channel7.work()
+    if n==8 or n%10==8:
+        channel8.work()
+    if n==9 or n%10==9:
+        channel9.work()
+    if n==10 or n%10==0:
+        channel10.work()
+
+da()
