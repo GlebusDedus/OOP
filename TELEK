@@ -1,0 +1,65 @@
+class Tv:
+
+    def __init__(self, channel=0, volume=0):
+        self.channel=channel
+        self.volume=volume
+            
+
+    def set_volume(self, volume):
+        self.volume=volume
+        if self.volume>100:
+            print('невозможно')
+            self.volume=100
+        elif self.volume<0:
+            print('невозможно')
+            self.volume=0
+
+
+    def set_channel(self, channel):
+        self.channel=channel
+        if self.channel>225:
+            print('Такого канала нету')
+            self.channel=0
+        elif self.channel<0:
+            print('Такого канала нету')
+            self.channel=0
+    
+    def talk(self):
+        print('Вы смотрите', self.channel, 'канал, на громкости', self.volume)
+
+def main():
+    tv=Tv()
+    choice=None
+    while choice!='0' and choice!='3':
+        print \
+        ('''
+                Меню
+        0-выключить телевизор
+        1-изменить настройки
+        2-просмотреть параметры
+        3-ударить телек кулаком
+        ''')
+        choice=input('выберите функцию ')
+        print()
+
+
+        if choice=='0':
+            print('*выключается*')
+
+
+        if choice=='1':
+            volume=int(input('Введите громкость: '))
+            tv.set_volume(volume)
+            channel=int(input('Введите канал: '))
+            tv.set_channel(channel)
+
+
+        if choice=='2':
+            tv.talk()
+            
+            
+        if choice=='3':
+            print('вас убило разрядом тока,вы прожили весьма неплохую жизнь,но смерть от телевизора разве то,что вы заслуживаете?')
+            print('вы стали причиной короткого замыкания,начался пожар,ваше действие привело к ужастным последствиям,несколько человек умерло ,думайте о последствиях своих действий')
+
+main()
